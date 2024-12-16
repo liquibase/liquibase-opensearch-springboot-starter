@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-parent-pom</artifactId>
+        <version>0.5.3</version> <!-- Replace with the desired version -->
+    </parent>
+
+    <groupId>org.liquibase.ext</groupId>
+    <artifactId>liquibase-opensearch-springboot-starter</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Liquibase Opensearch Springboot Starter Extension</name>
+    <packaging>jar</packaging>
+
+
+    <description>Liquibase extension to manage changesets for OpenSearch.</description>
+    <url>https://github.com/liquibase/liquibase-opensearch-springboot-starter</url>
+
+    <licenses>
+        <license>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <name>Apache License, Version 2.0</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Ralph Ursprung</name>
+            <email>ralph.ursprung@avaloq.com</email>
+            <organization>Avaloq Group AG</organization>
+            <organizationUrl>https://www.avaloq.com/</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/liquibase/liquibase-opensearch-springboot-starter.git</connection>
+        <developerConnection>scm:git:ssh://github.com:liquibase/liquibase-opensearch-springboot-starter.git</developerConnection>
+        <url>https://github.com/liquibase/liquibase-opensearch-springboot-starter</url>
+    </scm>
+
+    <properties>
+        <liquibase.version>4.30.0</liquibase.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <sonar.organization>liquibase</sonar.organization>
+        <sonar.projectKey>${sonar.organization}_${project.artifactId}</sonar.projectKey>
+        <sonar.projectName>${project.name}</sonar.projectName>
+        <sonar.projectDescription>${project.description}</sonar.projectDescription>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.scm.provider>git</sonar.scm.provider>
+        <sonar.qualitygate.wait>true</sonar.qualitygate.wait>
+        <sonar.sources>src/main/java</sonar.sources>
+        <sonar.tests>src/test/java</sonar.tests>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opensearch.client</groupId>
+            <artifactId>opensearch-java</artifactId>
+            <version>2.19.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.opensearch.client</groupId>
+                    <artifactId>opensearch-rest-client</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.36</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.11.0.3922</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>
