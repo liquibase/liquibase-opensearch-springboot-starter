@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>org.liquibase.ext</groupId>
-    <artifactId>liquibase-opensearch-springboot-starter</artifactId>
+    <artifactId>liquibase-opensearch-spring-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Liquibase Opensearch Springboot Starter Extension</name>
+    <name>Liquibase Opensearch Spring Boot Starter Extension</name>
     <packaging>jar</packaging>
 
 
