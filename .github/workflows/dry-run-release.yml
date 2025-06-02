@@ -20,12 +20,16 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       dry_run_release_id: ${{ steps.get_draft_release_id.outputs.release_id }}
+  
+  
     steps:
       - name: Get Draft Release ID 
         id: get_draft_release_id
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           release_name="v0.0.${{ github.run_number }}"
-          response=$(curl -s -H "Authorization: token ${{ secrets.BOT_TOKEN }}" \
+          response=$(curl -s -H "Authorization: token $GH_TOKEN" \
                           -H "Accept: application/vnd.github.v3+json" \
                           "https://api.github.com/repos/${{ github.repository }}/releases")
           draft_release=$(echo "$response" | jq -r --arg name "$release_name" '.[] | select(.name == $name and .draft == true)')
