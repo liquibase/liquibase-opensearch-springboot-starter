@@ -22,7 +22,6 @@ jobs:
       dry_run_release_id: ${{ steps.get_draft_release_id.outputs.release_id }}
   
   
-  
     steps:
       - name: Get Draft Release ID 
         id: get_draft_release_id
