@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       dry_run_release_id: ${{ steps.get_draft_release_id.outputs.release_id }}
-    permissions:
-      contents: read
+  
+  
   
     steps:
       - name: Get Draft Release ID 
