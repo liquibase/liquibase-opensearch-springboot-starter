@@ -42,7 +42,7 @@
   </scm>
 
     <properties>
-        <liquibase.version>5.0.3</liquibase.version>
+        <liquibase.version>5.0.4</liquibase.version>
         <spring-boot.version>4.1.1</spring-boot.version>
         <spring-data-opensearch.version>3.1.0</spring-data-opensearch.version>
         <maven.compiler.source>21</maven.compiler.source>
