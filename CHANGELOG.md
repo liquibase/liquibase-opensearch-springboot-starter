@@ -13,6 +13,7 @@ This version is compatible with Spring Boot 4.1.x.
 * Updated to Liquibase 5.0.4
 * Updated to `spring-data-opensearch:3.1.2`
 * Updated to `opensearch-java:3.10.0`
+* Updated to `liquibase-opensearch:2.1.0`
 
 ## [1.1.0] - 2026-06-17
 
